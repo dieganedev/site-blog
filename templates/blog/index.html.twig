@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Salut {{ controller_name }}!{% endblock %}
+
+{% block body %}
+
+     <div class = "jumbotron">
+      <h1 class = "display-3"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> Bienvenue dans DiéBlog! </font> </font> </h1>
+      <p class = "lead"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> Il s'agit d'un blog avec un système de commentaire </font> </font> </p>
+      <hr class = "my-4">
+      <p> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> Le blog possède des articles rangés en fonction de leurs dates de publications,les articles les plus récent en premier. </font> </font> </p>
+      <p class = "lead">
+        <a class="btn btn-primary btn-lg" href="{{ path('blog_affiche') }}" role="button"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;">> Apprendre encore plus </font> </font> </a>
+      </p>
+    </div> 
+ 
+{% endblock %}

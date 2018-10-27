@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formArticle 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+    {% if app.user %}
+        <h1>
+
+            {% if editMode %}
+
+                Modification d'article !
+
+            {% else %}
+
+                Création d'article !
+
+            {% endif %}
+
+        </h1>
+        
+            {{ form_start(formArticle) }}
+
+            {{ form_row(formArticle.titre, {'attr' : {'placeholder' : "Titre de l'article" }}) }}
+            {{ form_row(formArticle.category, {'label' : 'Catégorie de l\'article'}) }}
+            {{ form_row(formArticle.auteur, {'attr' : {'placeholder' : "Nom de l'auteur" }}) }}
+            {{ form_row(formArticle.description, {'attr' : {'placeholder' : "Contenu de l'article" }}) }}
+            {{ form_row(formArticle.image, {'attr' : {'placeholder' : "URL de l'image" }}) }}
+            {{ form_end(formArticle) }}
+
+        <button type="submit" class="btn btn-success"> 
+            {% if editMode %}
+
+                Enrégistrer les modifications
+
+            {% else %}
+
+                Ajouter l'article
+                
+            {% endif %}
+        </button>    
+    {% else %}
+                <h2>Vous ne pouvez pas créer un article si vous n'êtes pas connecté !<br>
+                            Clicez ci-dessous pour se connecter !
+                </h2>
+
+                <a href="{{ path('security_login') }}" class="btn btn-primary">Connexion</a>
+    {% endif %}
+       
+{% endblock %}
