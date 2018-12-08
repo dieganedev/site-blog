@@ -57,6 +57,7 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Length(min = 9, minMessage = "Votre numéro de téléphone est incompléte!")
      */
     private $phone;
 

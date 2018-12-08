@@ -15,7 +15,7 @@ class ArticleFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
       
-        $faker = \Faker\Factory::create('fr_FR');
+        $faker = \Faker\Factory::create('fr_Fr');
 
         //Crée trois fakées
         for($i = 1; $i <= 3; $i++){
@@ -26,8 +26,8 @@ class ArticleFixtures extends Fixture
 
             $manager->persist($category);
 
-            //Crée entre 4 et 6 articles
-            for($j = 1; $j <= mt_rand(4, 6); $j++){
+            //Crée entre 3 et 6 articles
+            for($j = 1; $j <= mt_rand(3, 6); $j++){
                 $article = new Article();
   
                 $description = '<p>'.join($faker->paragraphs(5), '</p><p>').'</p>';
@@ -42,7 +42,7 @@ class ArticleFixtures extends Fixture
                 $manager->persist($article);
 
                 //On donne des commentaires à l'article
-                for($k = 1; $k <=mt_rand(4, 10); $k++){
+                for($k = 1; $k <=mt_rand(3, 10); $k++){
 
                     $comment = new Comment();
 

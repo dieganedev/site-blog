@@ -30,7 +30,7 @@ class BlogController extends AbstractController
     }
 
      /**
-     * @Route("/", name="home")
+     * @Route("/home", name="home")
      */
     public function home(ArticleRepository $repo)
     {
@@ -93,38 +93,6 @@ class BlogController extends AbstractController
     public function type()
     {
         return $this->render('blog/type.html.twig');
-    }
-    
-    /**
-     * @Route("/blog/next/politique", name="blog_politique")
-     */
-    public function politique()
-    {
-        return $this->render('blog/politique.html.twig');
-    }
-
-    /**
-     * @Route("/blog/next/sport", name="blog_sport")
-     */
-    public function sport()
-    {
-        return $this->render('blog/sport.html.twig');       
-    }
-
-    /**
-     * @Route("/blog/next/humour", name="blog_humour")
-     */
-    public function humour()
-    {
-        return $this->render('blog/humour.html.twig');
-    }
-
-    /**
-     * @Route("/blog/next/autres", name="blog_autres")
-     */
-    public function autres()
-    {
-        return $this->render('blog/autres.html.twig');
     }
 
      /**
